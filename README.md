@@ -15,6 +15,7 @@ The following steps worked for me.
 #### Run Logs: (replacing some docker ids and image to xxx)
 (base) PS C:\Users\kamal\PycharmProjects\lambdaDocker> aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin xxx.dkr.ecr.us-east-1.amazonaws.com
 Login Succeeded  
+
 (base) PS C:\Users\kamal\PycharmProjects\lambdaDocker> docker build -t lambdadockerpython .  
 [+] Building 1.3s (9/9) FINISHED
  => [internal] load build definition from Dockerfile                                                                                                                                                                                 0.0s 
@@ -32,9 +33,11 @@ Login Succeeded
  => => naming to docker.io/library/lambdadockerpython                                                                                                                                                                                0.0s 
 
 Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them  
-(base) PS C:\Users\kamal\PycharmProjects\lambdaDocker> docker tag lambdadockerpython:latest xxx.dkr.ecr.us-east-1.amazonaws.com/lambdadockerpython:latest
-(base) PS C:\Users\kamal\PycharmProjects\lambdaDocker> docker push xxx.dkr.ecr.us-east-1.amazonaws.com/lambdadockerpython:latest  
-The push refers to repository [993818375429.dkr.ecr.us-east-1.amazonaws.com/lambdadockerpython]
+
+(base) PS C:\Users\kamal\PycharmProjects\lambdaDocker> docker tag lambdadockerpython:latest xxx.dkr.ecr.us-east-1.amazonaws.com/lambdadockerpython:latest  
+
+(base) PS C:\Users\kamal\PycharmProjects\lambdaDocker> docker push xxx.dkr.ecr.us-east-1.amazonaws.com/lambdadockerpython:latest    
+The push refers to repository [993818375429.dkr.ecr.us-east-1.amazonaws.com/lambdadockerpython]  
 4cd5dea7d933: Pushed  
 6a8ab05f2fb3: Pushed  
 d5b25a877e53: Pushed  
